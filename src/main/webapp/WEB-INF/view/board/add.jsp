@@ -13,7 +13,8 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-6">
-            <h3 class="mb-3">새 게시물 작성</h3>
+
+            <h3 class="mb-4">새 게시물 작성</h3>
 
             <form action="/add" method="post">
                 <div class="mb-3">
