@@ -12,6 +12,7 @@ CREATE TABLE board
     inserted DATETIME DEFAULT NOW()
 );
 
-
+SELECT *
+FROM board;
 
 
