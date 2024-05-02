@@ -23,4 +23,7 @@ public class MemberService {
         return mapper.selectAll();
     }
 
+    public Member get(Integer id) {
+        return mapper.selectById(id);
+    }
 }

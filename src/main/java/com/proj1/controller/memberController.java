@@ -33,4 +33,10 @@ public class memberController {
         model.addAttribute("memberList", service.list());
         return "member/list";
     }
+
+    @GetMapping("")
+    public String info(Integer id, Model model) {
+        model.addAttribute("member", service.get(id));
+        return "member/info";
+    }
 }
