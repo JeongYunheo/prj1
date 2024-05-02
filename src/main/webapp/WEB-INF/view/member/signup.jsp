@@ -15,7 +15,9 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-6">
+
             <h3 class="mb-4">회원가입</h3>
+
             <form action="/member/signup" method="post">
                 <div class="mb-3">
                     <label for="inputEmail" class="form-label">이메일</label>
@@ -33,6 +35,7 @@
                     <button class="btn btn-primary">가입</button>
                 </div>
             </form>
+            
         </div>
     </div>
 </div>

@@ -15,7 +15,9 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-6">
+
             <h3 class="mb-4">회원목록</h3>
+
             <table class="table table-striped">
                 <thead>
                 <tr>
@@ -45,6 +47,7 @@
                 </c:forEach>
                 </tbody>
             </table>
+
         </div>
     </div>
 </div>

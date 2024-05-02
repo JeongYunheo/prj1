@@ -40,15 +40,24 @@
                 </div>
                 <div class="mb-3">
                     <div>
-                        <label for="inputInserted" class="form-label">별명</label>
+                        <label for="inputInserted" class="form-label">가입일시</label>
                         <input value="${member.inserted}" id="inputInserted" type="text" readonly=""
                                class="form-control">
                     </div>
+                </div>
+                <div>
+                    <button class="btn btn-danger" form="formDelete">삭제</button>
                 </div>
             </div>
 
         </div>
     </div>
+</div>
+
+<div class="d-done" onsubmit="return confirm('탈퇴하시겠습니까?')">
+    <form action="/member/remove" id="formDelete" method="post">
+        <input type="hidden" name="id" value="${member.id}">
+    </form>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js"
