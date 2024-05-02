@@ -76,6 +76,7 @@
     }
 
     function checkValues() {
+        // 창 띄우기
         const password = document.getElementById("inputPassword").value;
         const passwordCheck = document.getElementById("inputPasswordCheck").value;
 
