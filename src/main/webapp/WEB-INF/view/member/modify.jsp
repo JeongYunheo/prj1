@@ -26,8 +26,15 @@
                 </div>
                 <div class="mb-3">
                     <label for="inputPassword" class="form-label">패스워드</label>
-                    <input id="inputPassword" type="password" class="form-control" name="password"
+                    <input oninput="passwordCheck()" id="inputPassword" type="password" class="form-control"
+                           name="password"
                            value="${member.password}">
+                </div>
+                <div class="mb-3">
+                    <label for="inputPasswordCheck" class="form-label">패스워드</label>
+                    <input oninput="passwordCheck()" id="inputPasswordCheck" type="password" class="form-control"
+                           value="${member.password}">
+                    <div id="passwordMessage" class="form-text"></div>
                 </div>
                 <div class="mb-3">
                     <label for="inputNickName" class="form-label">닉네임</label>
@@ -41,7 +48,18 @@
         </div>
     </div>
 </div>
+<script>
+    function passwordCheck() {
+        const password = document.querySelector("#inputPassword").value;
+        const passwordCheck = document.querySelector("#inputPasswordCheck").value;
 
+        if (password == passwordCheck) {
+            document.querySelector("#passwordMessage").textContent = ""
+        } else {
+            document.querySelector("#passwordMessage").textContent = "패스워드가 일치하지 않습니다"
+        }
+    }
+</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js"
         integrity="sha512-ykZ1QQr0Jy/4ZkvKuqWn4iF3lqPZyij9iRv6sGqLRdTPkY69YX6+7wvVGmsdBbiIfN/8OdsI7HABjvEok6ZopQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
