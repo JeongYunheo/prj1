@@ -21,13 +21,13 @@
                 <div class="mb-3">
                     <div>
                         <label for="inputEmail" class="form-label">이메일</label>
-                        <input value="${member.email}" id="inputEmail" type="text" readonly="" class="form-control">
+                        <input value="${member.email}" id="inputEmail" type="email" readonly="" class="form-control">
                     </div>
                 </div>
                 <div class="mb-3">
                     <div>
                         <label for="inputPassword" class="form-label">패스워드</label>
-                        <input value="${member.password}" id="inputPassword" type="text" readonly=""
+                        <input value="${member.password}" id="inputPassword" type="password" readonly=""
                                class="form-control">
                     </div>
                 </div>
@@ -46,7 +46,9 @@
                     </div>
                 </div>
                 <div>
-                    <button class="btn btn-danger" form="formDelete">삭제</button>
+                    <button class="btn btn-danger" form="formDelete">탈퇴</button>
+
+                    <a class="btn btn-secondary" href="/member/modify?id=${member.id}">정보수정</a>
                 </div>
             </div>
 
