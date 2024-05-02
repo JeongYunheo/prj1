@@ -33,7 +33,7 @@
                 </div>
                 <div class="mb-3">
                     <div>
-                        <label for="inputNickName" class="form-label">별명</label>
+                        <label for="inputNickName" class="form-label">닉네임</label>
                         <input value="${member.nickName}" id="inputNickName" type="text" readonly=""
                                class="form-control">
                     </div>
