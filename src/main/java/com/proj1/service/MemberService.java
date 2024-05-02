@@ -34,4 +34,15 @@ public class MemberService {
     public void modify(Member member) {
         mapper.update(member);
     }
+
+    public String emailCheck(String email) {
+        Member member = mapper.selectByEmail(email);
+
+        if (member == null) {
+            return "사용가능한 이메일입니다";
+        } else {
+            return "이미 존재하는 이메일입니다";
+        }
+
+    }
 }
