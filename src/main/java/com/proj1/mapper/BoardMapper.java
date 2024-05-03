@@ -64,4 +64,9 @@ public interface BoardMapper {
             """)
     int countAll();
 
+    @Delete("""
+            DELETE FROM board
+            WHERE member_id = #{memberId}
+            """)
+    int deleteBoardByMemberId(Integer memberId);
 }
