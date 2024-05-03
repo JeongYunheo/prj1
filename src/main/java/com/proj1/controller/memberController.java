@@ -60,8 +60,10 @@ public class memberController {
     }
 
     @PostMapping("modify")
-    public String modify(Member member, RedirectAttributes rttr) {
-        service.modify(member);
+    public String modify(Member member, Authentication authentication, RedirectAttributes rttr) {
+        if (service.hasAccess(member.getId(), authentication)) {
+            service.modify(member);
+        }
 
         rttr.addAttribute("id", member.getId());
         return "redirect:/member";
