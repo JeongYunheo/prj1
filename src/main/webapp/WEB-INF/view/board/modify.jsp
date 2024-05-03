@@ -33,13 +33,7 @@
                     <textarea id="inputContent" name="content" class="form-control" cols="30" rows="10"
                               required>${board.content}</textarea>
                 </div>
-                <div class="mb-3">
-                    <label for="inputWriter" class="form-label">
-                        작성자
-                    </label>
-                    <input id="inputWriter" type="text" class="form-control" name="writer" value="${board.writer}"
-                           required>
-                </div>
+
                 <div class="mb-3">
                     <button class="btn btn-secondary">수정</button>
                 </div>

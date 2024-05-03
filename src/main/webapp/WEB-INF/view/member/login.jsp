@@ -14,7 +14,9 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-6">
+
             <h3 class="mb-4">로그인</h3>
+
             <div>
                 <form action="/member/login" method="post">
                     <div class="mb-3">

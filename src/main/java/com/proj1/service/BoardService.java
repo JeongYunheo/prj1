@@ -80,6 +80,5 @@ public class BoardService {
             return board.getMemberId().equals(member.getId());
         }
         return false;
-
     }
 }
