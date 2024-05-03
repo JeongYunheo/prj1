@@ -3,10 +3,12 @@ package com.proj1.controller;
 import com.proj1.domain.Board;
 import com.proj1.service.BoardService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
@@ -21,12 +23,10 @@ public class BoardController {
     }
 
     @PostMapping("/add")
-    public String addPost(Board board, RedirectAttributes rttr) {
-        System.out.println("board: " + board);
+    public String addPost(Board board, Authentication authentication, RedirectAttributes rttr) {
+        service.add(board, authentication);
 
-        service.add(board);
         rttr.addAttribute("id", board.getId());
-
         return "redirect:/board";
     }
 
@@ -42,19 +42,23 @@ public class BoardController {
         return "board/view";
     }
 
+    // ?page=3
     @GetMapping("/")
-    public String home(Model model) {
+    public String home(@RequestParam(value = "page", defaultValue = "1") Integer page,
+                       Model model) {
         // 게시물 목록 조회(Select)
-        model.addAttribute("boardList", service.list());
+        model.addAllAttributes(service.list(page));
         // 모델에 넣고
-
         // view로 포워드
         return "board/home";
     }
 
     @PostMapping("/delete")
-    public String delete(Integer id) {
-        service.remove(id);
+    public String delete(Integer id, Authentication authentication) {
+        if (service.hasAccess(id, authentication)) {
+            service.remove(id);
+        }
+
 
         return "redirect:/";
     }
