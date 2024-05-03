@@ -49,8 +49,7 @@ public class memberController {
             service.remove(id);
         }
 
-
-        return "redirect:/member/signup";
+        return "redirect:/logout";
     }
 
     @GetMapping("modify")
