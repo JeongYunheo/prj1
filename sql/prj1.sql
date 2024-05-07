@@ -57,3 +57,18 @@ SELECT *
 FROM board;
 SELECT *
 FROM member;
+
+CREATE TABLE authority
+(
+    id        INT AUTO_INCREMENT PRIMARY KEY,
+    member_id INT         NOT NULL REFERENCES member (id),
+    name      VARCHAR(20) NOT NULL
+);
+
+INSERT INTO authority
+    (member_id, name)
+VALUES (28, 'admin');
+
+SELECT *
+FROM member m
+         LEFT JOIN authority a on m.id = a.member_id;
