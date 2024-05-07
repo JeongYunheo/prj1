@@ -77,7 +77,6 @@ public class BoardController {
         if (service.hasAccess(board.getId(), authentication)) {
             service.modify(board);
         }
-
         rttr.addAttribute("id", board.getId());
         return "redirect:/board";
     }
